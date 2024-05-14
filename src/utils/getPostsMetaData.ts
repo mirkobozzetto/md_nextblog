@@ -16,6 +16,7 @@ const getPostMetadata = (basePath: string) => {
       date: matterResult.data.date,
       title: matterResult.data.title,
       description: matterResult.data.description,
+      content: matterResult.content,
     };
   });
   return posts;

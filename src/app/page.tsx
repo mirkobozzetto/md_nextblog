@@ -1,18 +1,16 @@
 import getPostMetadata from "@/utils/getPostsMetaData";
+import PostCard from "./components/PostCard";
 
 export default function Home() {
   const postMetadata = getPostMetadata("./src/app/posts/");
   console.log(postMetadata);
   return (
     <main>
-      <p>index page</p>
-      {postMetadata.map((post) => (
-        <div key={post.slug}>
-          <h2>{post.title}</h2>
-          <p>{post.description}</p>
-          <p>{post.date}</p>
-        </div>
-      ))}
+      <div className="container">
+        {postMetadata.map((post, postIndex) => {
+          return <PostCard key={postIndex} post={post} />;
+        })}
+      </div>
     </main>
   );
 }

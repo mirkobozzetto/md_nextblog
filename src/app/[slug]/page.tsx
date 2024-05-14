@@ -1,7 +1,7 @@
 const BlogPage = () => {
   return (
     <>
-      <p>hello world</p>
+      <p>hello world, fuck you</p>
     </>
   );
 };
