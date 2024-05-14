@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import clsx from "clsx";
 import { Inter } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
@@ -14,7 +15,7 @@ const Header = () => {
   return (
     <header>
       <Link href={"/"}>
-        <p>welcome</p>
+        <h1 className="mb-5 text-2xl">Let's Go Developers</h1>
       </Link>
     </header>
   );
@@ -22,7 +23,7 @@ const Header = () => {
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="bottom-0 absolute">
       <p>made with love</p>
     </footer>
   );
@@ -35,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={clsx(inter.className, "min-h-screen flex flex-col")}>
         <Header />
         {children}
         <Footer />
